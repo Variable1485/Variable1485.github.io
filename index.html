@@ -73,6 +73,22 @@
             color: #9db5f2;
             text-shadow: 0px 0px 4px #9db5f2, 0px 0px 10px #4c52a8, 0px 0px 20px #1a66a1, 0px 0px 100px #1732e3;
         }
+        @media only screen and (max-width: 600px) {
+            /* styles for small screens */
+            body {
+                font-size: 20pt; /* reduce font size */
+            }
+
+            .container {
+                margin-top: 0; /* remove top margin */
+            }
+
+            /* make images smaller */
+            img {
+                width: 80%;
+                height: auto;
+            }
+        }
 
         .container {
             display: -webkit-flexbox;
@@ -124,22 +140,7 @@
             animation: countdown-animation 0.5s ease-in-out 10;
             color: red;
         }
-        @media only screen and (max-width: 600px) {
-            /* styles for small screens */
-            body {
-                font-size: 20pt; /* reduce font size */
-            }
 
-            .container {
-                margin-top: 0; /* remove top margin */
-            }
-
-            /* make images smaller */
-            img {
-                width: 80%;
-                height: auto;
-            }
-        }
     </style>
 </head>
 <body data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="">
