@@ -7,6 +7,7 @@
     <style lang="en" type="text/css" id="dark-mode-custom-style"></style>
     <style lang="en" type="text/css" id="dark-mode-native-style"></style>
     <style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+
     <script>
 
 
@@ -122,6 +123,22 @@
         .red-countdown {
             animation: countdown-animation 0.5s ease-in-out 10;
             color: red;
+        }
+        @media only screen and (max-width: 600px) {
+            /* styles for small screens */
+            body {
+                font-size: 20pt; /* reduce font size */
+            }
+
+            .container {
+                margin-top: 0; /* remove top margin */
+            }
+
+            /* make images smaller */
+            img {
+                width: 80%;
+                height: auto;
+            }
         }
     </style>
 </head>
