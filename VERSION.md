@@ -1,4 +1,4 @@
-Current version: **ALPHA**
+Current version: **INDEV**
 
 
 
@@ -12,8 +12,8 @@ STABLE (v1.0)
 
 BETA
 
-INDEV
+**INDEV *(Current)***
 
-**ALPHA *(Current)***
+ALPHA
 
 And so on.
