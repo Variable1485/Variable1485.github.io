@@ -1,4 +1,4 @@
-Current version: **INDEV**
+Current version: **BETA**
 
 
 
@@ -10,9 +10,9 @@ v1.1
 
 STABLE (v1.0)
 
-BETA
+**BETA *(Current)***
 
-**INDEV *(Current)***
+INDEV
 
 ALPHA
 
