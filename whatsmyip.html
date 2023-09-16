@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>IP Address</title>
@@ -84,7 +85,7 @@
         .then(response => response.json())
         .then(data => {
           const ipAddress = data.ip;
-          document.getElementById('ip-address').textContent = ipAddress;
+          document.getElementById('ip-address').textContent = ipAddress +" ,friendly reminder that only you can see your IP, your IP is not shared with the website owner. (Check open-source code)";
         })
         .catch(error => {
           console.log(error);
