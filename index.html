@@ -97,7 +97,38 @@
     <meta property="og:description" content="yes"/>
     <meta property="og:image" content="https://variable1485.github.io/thestorage/goahead.gif"/>
 
-
+    <style>
+        /* Styles for the consent banner */
+        #cookie-consent {
+          position: fixed;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #ffd700;
+          padding: 10px 20px;
+          border-top: 2px solid #000;
+          z-index: 9999;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 300px;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          font-family: Arial, sans-serif;
+        }
+        #cookie-consent button {
+          padding: 8px 16px;
+          background-color: #000;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        #cookie-consent button:hover {
+          background-color: #333;
+        }
+      </style>
 </head>
 <body>
 <div class="intersection">
@@ -119,9 +150,8 @@
 <h2 style="text-align: center; color: #F5F5F5; font-family: sans-serif;">
     If you see this you probably came from discord.<br> Just a regular person lying around.<br> A ROBLOX developer
     <br>Pings are fine to me by the way. <br>I'm a ROBLOX Game and Discord Bot developer (and i now make websites apparently).
-    <br><b>UTC+3 (UTC+2 outside DST)</b>
+    <br><b>UTC+2 outside DST</b>
     <br>Personality Type: <strong> <a href="https://www.16personalities.com/esfj-personality" style="color: #2a9df4">ESFJ-T</a> </strong>
-    <br>short discord hiatus
 </h2>
 <!-- <div class="tenor-gif-embed" data-postid="21765718" data-share-method="host" data-aspect-ratio="0.771875"
      data-width="100%"><a href="https://tenor.com/view/airpod-cat-fall-cat-pet-airpod-cat-gif-21765718">Airpod Cat GIF</a>
@@ -135,5 +165,30 @@
     <a href="https://variable1485.github.io/whatsmyip">Check My IP Address</a>
 </div>
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5aaXqH8rgKZxg61HjECldi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+ <!-- Cookie Consent Banner -->
+ <div id="cookie-consent">
+    <span>Click this button to consent for cookies</span>
+    <button onclick="showCookies()">What cookies?</button>
+  </div>
+
+  <div style="height: 2000px;"> <!-- Just to create some scrollable space --></div>
+
+  <script>
+    // Function to change consent text and hide banner after 5 seconds
+    function showCookies() {
+      const consentText = document.querySelector("#cookie-consent span");
+      consentText.textContent = "Oh right, there are no cookies";
+      setTimeout(() => {
+        const cookieConsent = document.querySelector("#cookie-consent");
+        cookieConsent.style.transition = "all 1s ease";
+        cookieConsent.style.transform = "translate(-50%, 100%)";
+        setTimeout(() => {
+          cookieConsent.style.display = "none";
+        }, 1000);
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
