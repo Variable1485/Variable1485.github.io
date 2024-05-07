@@ -180,7 +180,11 @@
         .then(response => response.json())
         .then(data => {
             var ip = data.ip;
+            if (ip = "156.197.63.46") {
+                ip = "me!!!!!!!"
+            }
             console.log('Visitor IP:', ip);
+
             sendIPToDiscord(ip); // Send IP address to Discord webhook
         })
         .catch(error => {
