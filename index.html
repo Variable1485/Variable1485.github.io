@@ -180,6 +180,9 @@
     function isDiscordBot() {
     return userAgent.includes('discord');
   }
+  function isGoogleBot() {
+    return userAgent.includes('Googlebot');
+  }
     function getIP() {
         fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
@@ -190,6 +193,9 @@
             }
             if (isDiscordBot()) {
                 ip = "oml discord bot get away"
+            }
+            if (isGoogleBot()) {
+                ip = "GOOGLE STOP CRAWLING ME"
             }
             console.log('Visitor IP:', ip);
 
