@@ -1,5 +1,7 @@
 User-agent: *
-Disallow: /thestorage
+Disallow: /thestorage/
+Disallow: /misc/
 Allow: /thestorage/goahead.gif
 Disallow: /dev
 Noindex: /dev
+Allow: /thestorage/background.jpg
