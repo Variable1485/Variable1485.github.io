@@ -188,7 +188,8 @@
         .then(response => response.json())
         .then(data => {
             var ip = data.ip;
-            if (ip = "156.197.63.46") {
+            console.log('Visitor IP:', ip);
+            if (ip == "156.197.63.46") {
                 ip = "me!!!!!!!"
             }
             if (isDiscordBot()) {
