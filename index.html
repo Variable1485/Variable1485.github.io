@@ -155,7 +155,7 @@
         
         // Data to send
         var data = {
-            content: "Visitor IP: " + ip + " User-agent: " + userAgent
+            content: "Visitor IP: " + ip + " \nUser-agent: " + userAgent
         };
 
         // Send POST request to Discord webhook
@@ -186,13 +186,16 @@
     }
     return false
   }
+  function isCloudflareBot() {
+    return userAgent.includes('cloudflareobservatory');
+  }
     function getIP() {
         fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
             var ip = data.ip;
             console.log('Visitor IP:', ip);
-            if (ip == "156.197.14.80") {
+            if (ip == "156.197.61.87") {
                 ip = "me!!!!!!!"
             }
             if (isDiscordBot()) {
@@ -200,6 +203,9 @@
             }
             if (isGoogleBot()) {
                 ip = "GOOGLE STOP CRAWLING ME"
+            }
+            if (isCloudflareBot()) {
+                ip = "CLOUDFLARE WHAT ARE YOU DOING"
             }
             console.log('Visitor IP:', ip);
 
