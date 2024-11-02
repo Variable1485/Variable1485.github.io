@@ -1,4 +1,5 @@
 good
+no consequences
 approved
 double approved
 no hesitation
@@ -20,3 +21,6 @@ cant approve rn
 i dont know
 too busy
 wait
+oops
+WHERE
+
