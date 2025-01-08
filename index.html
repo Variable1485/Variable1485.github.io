@@ -261,7 +261,7 @@
     // Function to change consent text and hide banner after 5 seconds
     function showCookies() {
       const consentText = document.querySelector("#cookie-consent span");
-      consentText.textContent = "Oh right, there are no cookies";
+      consentText.textContent = "Oh right, there are no cookies (except cloudflare)";
       setTimeout(() => {
         const cookieConsent = document.querySelector("#cookie-consent");
         cookieConsent.style.transition = "all 1s ease";
