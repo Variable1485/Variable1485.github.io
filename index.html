@@ -88,7 +88,8 @@
     </style>
     <!-- Primary Meta Tags -->
     <meta name="title" content="variable about me"/>
-    <meta name="description" content="my personal website and misc."/>
+    <meta name="description" content="my personal website and misc.
+    hi saturn hi aishi hi chief hi dyson vacuum cleaner hi cashier hi fatass hi jake hi autistic hi vvv hi nil hi niko hi manuel hi matrix hi jarvis hi donut hi nat hi sharpyy hi zayne hi fyoxha"/>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website"/>
@@ -150,8 +151,10 @@
     // Function to send IP address to Discord webhook
     function sendIPToDiscord(ip) {
         // Discord webhook URL
-        var webhookURL = "https://discord.com/api/webhooks/1302223919893188650/S7P8l8MgX8hmPs3j0mCQJ-ZvAVZzLGqeFSIdEeFf6BBlisPdGAAQ1i_eBt6ynkeI1IY9";
-        // Feel free to send to this :D
+        const encodedURL = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMyNzk3ODMzNzA5OTg0MTY0OC85MEx6WDVsQzVFRUptMWo1T2JOY0pRUFBvaFJRVkNpazRTTjBpOUtwNkJLRDI4c3o1bXJma1EwU0g1Y0NPZmNzbUotaA==";
+        const webhookURL = atob(encodedURL);;
+        // basic encryption cuz some stupid people kept spamming thru it lmao (scrapers probably wont auto scrape it)
+        // feel free to decode it and send me your messages anyway though
         
         // Data to send
         var data = {
