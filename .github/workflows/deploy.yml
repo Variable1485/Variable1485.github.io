@@ -15,7 +15,7 @@ jobs:
 
       - name: Create the webhook.js file
         run: |
-          echo 'const webhookURL = "${{ secrets.WEBHOOK_URL }}";' > webhook.js
+          echo 'const webhookURL = "${{ secrets.WEBHOOK }}";' > webhook.js
 
       - name: Prepare the deploy directory
         run: |
