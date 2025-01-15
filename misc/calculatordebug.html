@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<meta property="og:title" content="Calculator">
+<meta property="og:description" content="calculotat..r.r...">
+<meta property="og:image" content="calculator.jpg">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:url" content="https://variable.icu/misc/calculator">
+<meta property="og:type" content="website">
+<script>
+  function isDiscordBot() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    return userAgent.includes('discord');
+  }
+
+  function redirectToCalculator() {
+    window.location.href = 'ms-calculator://';
+  }
+
+  function displayIMG() {
+    document.getElementById('calculator').innerHTML = '<img src="calculator.jpg" alt="Calculator jpg">';
+  }
+
+  function init() {
+    if (isDiscordBot()) {
+      displayIMG();
+    } else {
+      displayIMG();
+    }
+  }
+
+  window.onload = init;
+</script>
+</head>
+<body>
+<div id="calculator"></div>
+</body>
+</html>
