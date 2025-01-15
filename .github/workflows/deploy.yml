@@ -13,9 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build HTML
+      - name: Create the webhook.js file
         run: |
-          echo '<script>const webhookURL = "${{ secrets.webhook }}";</script>' > webhook.js
+          echo '<script>const webhookURL = "${{ secrets.WEBHOOK_URL }}";</script>' > webhook.js
+
+      - name: Prepare the deploy directory
+        run: |
+          mkdir -p $GITHUB_WORKSPACE/deploy
           cp -r * $GITHUB_WORKSPACE/deploy
 
       - name: Deploy to GitHub Pages
