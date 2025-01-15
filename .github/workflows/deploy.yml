@@ -20,7 +20,7 @@ jobs:
       - name: Prepare the deploy directory
         run: |
           mkdir -p $GITHUB_WORKSPACE/deploy
-          cp -r * $GITHUB_WORKSPACE/deploy
+          rsync -av --progress --exclude='deploy' . $GITHUB_WORKSPACE/deploy
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
