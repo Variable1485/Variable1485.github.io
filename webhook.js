@@ -1,1 +1,1 @@
-<script>const webhookURL = "";</script>
+const webhookURL = "";
