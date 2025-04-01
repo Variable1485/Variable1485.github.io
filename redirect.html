@@ -1,0 +1,19 @@
+<video id="rickroll" autoplay loop playsinline width="640" height="360">
+    <source src="redirect3.mp4" type="video/mp4">
+</video>
+
+<script>
+    let rick = document.getElementById("rickroll");
+
+    rick.oncanplay = () => rick.play(); 
+    rick.onpause = () => rick.play(); 
+    rick.onvolumechange = () => rick.volume = 1; 
+    rick.controls = false; 
+
+    setInterval(() => {
+        if (!document.body.contains(rick)) {
+            document.body.appendChild(rick);
+            rick.play();
+        }
+    }, 1000);
+</script>
